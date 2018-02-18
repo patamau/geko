@@ -1,0 +1,371 @@
+@CHARSET "ISO-8859-1";
+
+@font-face {
+    font-family: 'bariolregular';
+    src: url('fonts/bariol_regular-webfont.eot');
+    src: url('fonts/bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bariol_regular-webfont.woff2') format('woff2'),
+         url('fonts/bariol_regular-webfont.woff') format('woff'),
+         url('fonts/bariol_regular-webfont.ttf') format('truetype'),
+         url('fonts/bariol_regular-webfont.svg#bariolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(video/video.png) no-repeat;
+    background-size: cover; 
+}
+
+html, body {
+	margin: 0;
+	height:100%;
+	width:100%;
+	font-family: 'bariolregular',  Arial, sans-serif;
+}
+
+div.toolbar {
+	width:100%;
+	float: left;
+}
+
+.toolbar li{
+	display: inline;
+	padding: 0 20px 0 0;
+}
+
+.toolbar div.file{
+	position: fixed;
+}
+.toolbar div.title{
+	position: relative;
+	margin: 0 auto;
+	width: 50%;
+	text-align: center;
+}
+
+.toolbar .title h1{
+	float: left;
+	display: inline-block;
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 35px;
+}
+
+.toolbar div.edit{
+	display: inline-block;
+	text-align: left;
+	margin: auto 0;
+	right: 100px;
+	position: fixed;
+}
+
+.toolbar div.close{
+	position: fixed;
+	right: 10px;
+	top: 10px;
+}
+
+div.core {
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+	height: 60%;
+}
+
+.core div.about{
+	float: left;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+}
+
+div.baloon{
+	width: 90%;
+    height: 80%;
+    margin: 10% auto;
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    border: solid black 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.form div.baloon{
+	margin: 20px;
+	width: 100%;
+}
+
+div.baloon:before{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+}
+
+div.baloon:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 21px solid transparent;
+}
+
+div.right.baloon:before{
+	left: 0;
+	top: 50%;
+	border-right-color: rgba(0, 0, 0, 1);
+	border-left: 0;
+	margin-top: -25px;
+	margin-left: -25px;
+}
+
+div.right.baloon:after{
+	left: 0;
+	top: 50%;
+	border-right-color: rgba(255, 255, 255, 1);
+	border-left: 0;
+	margin-top: -21px;
+	margin-left: -21px;
+}
+
+div.left.baloon:before{
+	right: 0;
+	top: 50%;
+	border-left-color: rgba(0, 0, 0, 1);
+	border-right: 0;
+	margin-top: -25px;
+	margin-right: -25px;
+}
+
+div.left.baloon:after{
+	right: 0;
+	top: 50%;
+	border-left-color: rgba(255, 255, 255, 1);
+	border-right: 0;
+	margin-top: -21px;
+	margin-right: -21px;
+}
+
+.core div.preview{
+	float: left;
+	width: 40%;
+	height: 100%;
+	text-align: center;
+	border-radius: 25px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.core .preview img{
+	width:90%;
+    max-height: 90%;
+    border: solid black 3px;
+}
+
+.core div.hints{
+	float: left;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+}
+
+div.controls {
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+	height: 25%;
+}
+
+.controls div.items{
+	position: relative;
+	width: 75%;
+	height:100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.controls div.item-container{
+	float: left;
+	width: 25%;
+	height: inherit;
+}
+
+.controls div.item{
+    margin: 5%;
+    border-radius: 20px;
+    height: 85%;
+}
+
+.controls .item div.icon:hover{
+	cursor: pointer;
+	color: yellow;
+}
+
+.icon {
+	position: relative;
+	max-width: 120px;
+	height: 60%;
+	padding: 10px 0 0 0;
+	border: solid black 4px;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 25px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+div.icon.globe{
+	background-image: url("icons/globe.png");
+}
+
+div.icon.language{
+	background-image: url("icons/language.png");
+}
+
+div.icon.visual{
+	background-image: url("icons/eye.png");
+}
+
+div.icon.development{
+	background-image: url("icons/rocket.png");
+}
+
+div.content {
+	padding: 1% 2%;
+    margin: 1% 2%;
+    font-size: 25px;
+    overflow-y: auto;
+    max-height: 94%;
+    text-align: justify;
+}
+
+table.form {
+	width: 100%;
+}
+
+.form td.key{
+	width: 60%;
+}
+
+.form td.value{
+	width: 40%;
+    text-align: center;
+}
+
+.form td {
+	padding: 5px;
+}
+
+.form input[type=text] {
+	border: 0;
+    font-size: 45px;
+    width: 50px;
+    text-align: center;
+    border: solid silver 1px;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.form input:focus {
+    outline-width: 0;
+}
+
+td.infobutton{
+	cursor: pointer;
+}
+
+div.infobox {
+	width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    display: none;
+    background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
+}
+
+.infobox div.content{
+	position: relative;
+    margin: 0 auto;
+    top: 25%;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+    border: solid black 4px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.9); /* complimenting your modal colors */
+}
+
+.content .button{
+	width: 200px;
+    font-size: 30px;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,0.5);
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.content .button:hover{
+    border: solid white 2px;
+    background-color: white;
+}
+
+.caption p{
+	margin: 0;
+}
+
+.caption p.name{
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: black; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: black; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>Geko</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+</head>
+<body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
+<video playsinline autoplay muted loop poster="video/video.png" id="bgvid">
+    <source src="video/video_blue.webm" type="video/webm">
+    <source src="video/video_blue.mp4" type="video/mp4">
+</video>
+
+<div class="toolbar">
+	<div class="file">
+		<ul>
+			<li><i class="fa fa-bars fa-3x"></i></li>
+			<li><i class="fa fa-plus-square-o fa-3x"></i></li>
+			<li><i class="fa fa-folder-open-o fa-3x"></i></li>
+		</ul>
+	</div>
+	<div class="title">
+		<h1>Project Name</h1>
+	</div>
+	<div class="edit">
+		<ul>
+			<li><i class="fa fa-pencil-square-o fa-3x"></i></li>
+			<li><i class="fa fa-floppy-o fa-3x"></i></li>
+			<li><i class="fa fa-share-alt fa-3x"></i></li>
+		</ul>
+	</div>
+	<div class="close">
+		<i class="fa fa-times fa-3x" onclick="var ww = window.open(window.location, '_self'); ww.close();"></i>
+	</div>
+</div>
+
+<div class="core">
+	<div class="about">
+		<div class="baloon left">
+			<div class="content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
+	<div class="preview">
+		<h4>Some text</h4>
+		<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+			<img src="data/balsamiq_20180128.png">
+		</a>
+		<div class="status">
+			<p class="value">
+				Expected GBC 0.5
+			</p>
+			<p class="value">
+				Current GBC 0.5
+			</p>
+			<p class="value">
+				Evaluation progress 0%
+			</p>
+		</div>
+	</div>
+	<div class="hints">
+		<div class="baloon right">
+			<div class="content">
+				<div id="navigationform" style="display: none">
+					<h2><i class="fa fa-globe"></i> Navigation</h2>
+					<table class="form">
+						<tr>
+							<td class="key">
+								<h4>Variety of subject matter</h4>
+								<div class="slidecontainer">
+								  <input type="range" min="1" max="15" value="0" class="slider" id="myRange" oninput='$("#davalue").val(this.value)'>
+								</div>
+							</td>
+							<td class="value">
+								<input type="text" maxlength="2" id="davalue" disabled>
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Variety of subject matter','Number of separate topics covered throughout the system')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+					</table>
+					<input class="button" type="button" value="Ok" onclick="closeForm('#navigationform')">
+				</div>
+				<div id="languageform" style="display: none">
+					<h2><i class="fa fa-language"></i> Language</h2>
+					<table class="form">
+						<tr>
+							<td class="key">
+								<h4>Self-promotion</h4>
+								<div class="slidecontainer">
+								  <input type="range" min="1" max="15" value="0" class="slider" id="myRange" oninput='$("#selfpromotion").val(this.value)'>
+								</div>
+							</td>
+							<td class="value">
+								<input type="text" maxlength="2" id="selfpromotion" disabled>
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Self-promotion','Whether the system advertises its achievements beyond simply asserting the products / services it offers')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="key">
+								<h4>Abbreviations</h4>
+							</td>
+							<td class="value">
+								<input type="text" maxlength="2" >
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Self-promotion','Whether the system advertises its achievements beyond simply asserting the products / services it offers')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="key">
+								<h4>Expert language </h4>
+							</td>
+							<td class="value">
+								<input type="checkbox" maxlength="2">
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Self-promotion','Whether the system advertises its achievements beyond simply asserting the products / services it offers')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+						<tr>
+							<td class="key">
+								<h4>Formal language</h4>
+							</td>
+							<td class="value">
+								<input type="checkbox" class="radio" >
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Self-promotion','Whether the system advertises its achievements beyond simply asserting the products / services it offers')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+					</table>
+					<input class="button" type="button" value="Ok" onclick="closeForm('#languageform')">
+				</div>
+				<div id="visualform" style="display: none">
+					<h2><i class="fa fa-eye"></i> Visual Elements</h2>
+					<table class="form">
+						<tr>
+							<td class="key">
+								<h4>Variety of subject matter</h4>
+							</td>
+							<td class="value">
+								<input type="text" maxlength="2" >
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Variety of subject matter','Number of separate topics covered throughout the system')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+					</table>
+					<input class="button" type="button" value="Ok" onclick="closeForm('#visualform')">
+				</div>
+				<div id="developmentform" style="display: none">
+					<h2><i class="fa fa-rocket"></i> Development</h2>
+					<table class="form">
+						<tr>
+							<td class="key">
+								<h4>Variety of subject matter</h4>
+							</td>
+							<td class="value">
+								<input type="text" maxlength="2" >
+							</td>
+							<td class="infobutton" onclick="openInfoBox('Variety of subject matter','Number of separate topics covered throughout the system')">
+								<i class="fa fa-question-circle-o fa-2x"></i>
+							</td>
+						</tr>
+					</table>
+					<input class="button" type="button" value="Ok" onclick="closeForm('#developmentform')">
+				</div>
+				<div id="geko">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="infobox">
+	<div class="content">
+		<h2 id="infobox-title"></h2>
+		<p id="infobox-text"></p>
+		<input class="button" type="button" value="Ok" onclick="closeInfoBox()">
+	</div>
+</div>
+
+<div class="controls">
+	<div class="items">
+		<div class="item-container">
+			<div class="item" onclick="closeForm('#languageform'); closeForm('#visualform'); closeForm('#developmentform'); openForm('#navigationform')">
+				<div class="icon globe">
+				</div>
+				<div class="caption">
+					<p class="name">
+						Navigation
+					</p>
+					<p class="value">
+						GBC 0.5
+					</p>
+					<p class="value">
+						Completed 100%
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="item-container">
+			<div class="item" onclick="closeForm('#navigationform'); closeForm('#visualform'); closeForm('#developmentform'); openForm('#languageform')">
+				<div class="icon language">
+				</div>
+				<div class="caption">
+					<p class="name">
+						Language
+					</p>
+					<p class="value">
+						GBC 0.5
+					</p>
+					<p class="value">
+						Completed 100%
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="item-container">
+			<div class="item" onclick="closeForm('#languageform'); closeForm('#navigationform'); closeForm('#developmentform'); openForm('#visualform')">
+				<div class="icon visual">
+				</div>
+				<div class="caption">
+					<p class="name">
+						Visual Elements
+					</p>
+					<p class="value">
+						GBC 0.5
+					</p>
+					<p class="value">
+						Completed 100%
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="item-container">
+			<div class="item" onclick="closeForm('#languageform'); closeForm('#visualform'); closeForm('#navigationform'); openForm('#developmentform')">
+				<div class="icon development">
+				</div>
+				<div class="caption">
+					<p class="name">
+						Development
+					</p>
+					<p class="value">
+						GBC 0.5
+					</p>
+					<p class="value">
+						Completed 100%
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+var video = document.getElementById("bgvid");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+}
+
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+	video.pause();
+	vidFade();
+}, false); 
+ 
+video.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+	e.preventDefault();
+	video.play();
+});
+</script>
+
+</body>
+</html>
