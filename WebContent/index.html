@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -45,26 +46,54 @@
 <div class="core">
 	<div class="about">
 		<div class="baloon left">
-			<div class="content">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div class="content">	
+				<h2>Did you know?</h2>
+				<p>By <a href="https://www.telegraph.co.uk/authors/cara-mcgoogan/">Cara McGoogan</a> 2 NOVEMBER 2017 - 12:01AM</p>
+				<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+				<p>The gender gap across the world widened for the first time in a decade in 2017, as the situation worsened for women in 60 countries. At the current rate, women are not likely to reach economic parity with men until 2234, according to the World Economic Forum (WEF).</p>
+				<a href="https://www.telegraph.co.uk/women/life/will-take-217-years-close-gender-gap-need-know/">Full story</a> 
 			</div>
 		</div>
 	</div>
 	<div class="preview">
-		<h4>Some text</h4>
-		<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
-			<img src="data/balsamiq_20180128.png">
-		</a>
+		<div class="w3-content w3-display-container">
+			<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+				<img class="mySlides" src="data/balsamiq_20180128.png">
+			</a>
+			<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+				<img class="mySlides" src="data/balsamiq_20180128.png">
+			</a>
+			<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+				<img class="mySlides" src="data/balsamiq_20180128.png">
+			</a>
+		    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+			    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+			    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+			    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+			    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+			    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+			</div>
+		</div>
 		<div class="status">
-			<p class="value">
-				Expected GBC 0.5
-			</p>
-			<p class="value">
-				Current GBC 0.5
-			</p>
-			<p class="value">
-				Evaluation progress 0%
-			</p>
+			<ul>
+				<li class="value">
+					<h4>Expected</h4>
+					<i class="fa fa-venus-mars fa-3x"></i>
+					GBC 0.5
+				</li>
+				<li class="value">
+					<h4>Current</h4>
+					<i class="fa fa-venus-mars fa-3x"></i>
+					GBC 0.5
+				</li>
+				<li class="value">
+					<h4>Evaluation progress 0%</h4>
+					<div id="bar">
+					    <div id="progress">
+					    </div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<div class="hints">

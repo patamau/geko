@@ -369,3 +369,52 @@ div.infobox {
     background: black; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
+
+.status ul{
+	display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.status ul>li>h4{
+	margin: 0;
+    margin-bottom: 10px;
+}
+
+.status ul>li{
+	width: 33%;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.status ul>li>i{
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, blue), color-stop(1, pink));
+    background-image: gradient(linear, left top, right top, color-stop(0.2, blue), color-stop(1, pink));
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /*font-size: 2em;*/
+}
+
+.status #bar{
+    border-radius: 0em;
+    border: 1px solid black;
+    overflow: hidden;
+    height: 20px;
+    margin: 10px;
+}
+.status #progress{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    background-color: #81a181;
+}
+
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
