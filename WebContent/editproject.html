@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>Geko</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
+<video playsinline autoplay muted loop poster="video/video.png" id="bgvid">
+    <source src="video/video_yellow.webm" type="video/webm">
+    <source src="video/video_yellow.mp4" type="video/mp4">
+</video>
+
+<div class="toolbar">
+	<div class="file">
+		<ul>
+			<li><a href="newproject.html"><i class="fa fa-plus-square-o fa-3x"></i></a></li>
+			<li><a href="openproject.html"><i class="fa fa-folder-open-o fa-3x"></i></a></li>
+		</ul>
+	</div>
+	<div class="title">
+		<h1>EDITING "Project name"</h1>
+	</div>
+</div>
+
+<div class="module">
+	<div class="preview">
+		<form action="index.html" method="post">
+			<table class="form">
+				<tr>
+					<td class="key">
+						<h4>Project name</h4>
+					</td>
+					<td class="value">
+						<input type="text" maxlength="100" name="project_name" id="project_name" value="Project name">
+					</td>
+					<td class="infobutton" onclick="openInfoBox('Project name','A name used to identify this project. Can be chaned later.')">
+						<i class="fa fa-question-circle-o fa-2x"></i>
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<h4>Website</h4>
+					</td>
+					<td class="value">
+						<input type="text" maxlength="200" name="project_website" id="project_website" value="https://www.projectname.com">
+					</td>
+					<td class="infobutton" onclick="openInfoBox('Website','If the interface is hosted on a webpage it is possible to insert here the URL.')">
+						<i class="fa fa-question-circle-o fa-2x"></i>
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<h4>Pictures</h4>
+					</td>
+					<td class="value">
+						<input type="file" name="project_pictures" id="project_pictures" multiple>
+					</td>
+					<td class="infobutton" onclick="openInfoBox('Pictures','If there are pictures available for the interface, you can load them here. Other can be added later.')">
+						<i class="fa fa-question-circle-o fa-2x"></i>
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+					</td>
+					<td class="value">
+						<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+							<img src="data/balsamiq_20180128.png">
+						</a>
+						<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+							<img src="data/balsamiq_20180128.png">
+						</a>
+						<a data-fancybox="gallery" href="data/balsamiq_20180128.png">
+							<img src="data/balsamiq_20180128.png">
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+					</td>
+					<td class="value">
+						<input type="submit" value="Ok" >
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="hints">
+	</div>
+</div>
+
+<div class="infobox">
+	<div class="content">
+		<h2 id="infobox-title"></h2>
+		<p id="infobox-text"></p>
+		<input class="button" type="button" value="Ok" onclick="closeInfoBox()">
+	</div>
+</div>
+
+<script>
+var video = document.getElementById("bgvid");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+}
+
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+	video.pause();
+	vidFade();
+}, false); 
+ 
+video.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+	e.preventDefault();
+	video.play();
+});
+</script>
+
+</body>
+</html>
