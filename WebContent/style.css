@@ -451,13 +451,13 @@ div.infobox {
     float: left;
 }
 
-.status ul>li>i{
-	background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, blue), color-stop(1, pink));
-    background-image: gradient(linear, left top, right top, color-stop(0.2, blue), color-stop(1, pink));
-    color:transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    /*font-size: 2em;*/
+.preview .buttons a{
+	padding: 45px;
+}
+
+.preview div.details{
+	text-align: left;
+    padding-left: 20px;
 }
 
 .status #bar{
@@ -469,9 +469,9 @@ div.infobox {
 }
 .status #progress{
     position: relative;
-    width: 25%;
+    width: 50%;
     height: 100%;
-    background-color: #81a181;
+    background-color: #8f8f8f;
 }
 
 .mySlides {display:none}

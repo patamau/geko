@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>Geko</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
+<video playsinline autoplay muted loop poster="video/video.png" id="bgvid">
+    <source src="video/video_yellow.webm" type="video/webm">
+    <source src="video/video_yellow.mp4" type="video/mp4">
+</video>
+
+<div class="toolbar">
+	<div class="file">
+		<ul>
+			<li><a href="/geko" style="float:left" title="Geko"><img src="icons/geko_logo.png" style="height:40px"></a></li>
+		</ul>
+	</div>
+	<div class="title">
+		<h1>"My cool project" REPORT</h1>
+	</div>
+	<div class="edit">
+		<ul>
+			<li><a class="print-button" href="#" onclick="printThis()" title="Print this page..."><i class="fa fa-print fa-3x"></i></a></li>
+			<li>
+				<a href="#" title="Share this Project..." onclick="openInfoBox('Sharing Project','You can share this project using this permalink url: http://localhost/geko/?project=1234')">
+					<i class="fa fa-share-alt fa-3x"></i>
+				</a>
+			</li>
+		</ul>
+		<script>
+			function printThis(){
+				var prtContent = document.getElementById("print-this");
+				//var head = document.getElementsByTagName("head")[0];
+				var WinPrint = window.open('', '', '');
+				//WinPrint.document.write(head.innerHTML);
+				WinPrint.document.write(prtContent.innerHTML);
+				WinPrint.document.close();
+				WinPrint.focus();
+				WinPrint.print();
+				WinPrint.close();
+			}
+		</script>
+	</div>
+</div>
+
+<div class="core" style="height: 80%">
+	<div class="about">
+		
+	</div>
+	<div class="preview">
+		<div id="print-this">
+			<h2>In progress report for "My cool project"</h2>
+			<small>2018-03-25 15:45</small>
+			<hr>
+			<div class="details">
+				<h3><i class="fa fa-venus-mars"></i> Gender Bias Coefficient <i class="fa fa-exclamation-triangle"></i></h3>
+				<table>
+				<tr>
+					<td>Expected Gender Bias Coefficient:</td><td>50%</td>
+				</tr><tr>
+					<td>Total Gender Bias Coefficient:</td><td>50% <i class="fa fa-thumbs-o-up"></i></td>
+				</tr><tr>
+					<td>Completion:</td><td>50% <i class="fa fa-exclamation-triangle"></i></td>
+				</tr>
+				</table>
+				<hr>
+				<h4><i class="fa fa-list"></i> Details <i class="fa fa-exclamation-triangle"></i></h4>
+				<table>
+				<tr>
+					<td>Navigation:</td><td>GBC 50% (100%)</td>
+				</tr><tr>
+					<td>Language:</td><td>GBC 50% (100%)</td>
+				</tr><tr>
+					<td>Visual Elements:</td><td>GBC 50% (15%)  <i class="fa fa-exclamation-triangle"></i></td>
+				</tr><tr>
+					<td>Development:</td><td>GBC 50% (0%)  <i class="fa fa-exclamation-triangle"></i></td>
+				</tr>
+				</table>
+			</div>
+			<hr>
+		</div>
+		<div class="buttons">
+			<form action="index.html" method="post">
+				<input type="submit" value="Ok" >
+			</form>
+	    </div>
+	</div>
+	<div class="hints">
+	</div>
+</div>
+
+<div class="infobox">
+	<div class="content">
+		<h2 id="infobox-title"></h2>
+		<p id="infobox-text"></p>
+		<input class="button" type="button" value="Ok" onclick="closeInfoBox()">
+	</div>
+</div>
+
+<script>
+var video = document.getElementById("bgvid");
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+}
+
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+	video.pause();
+	vidFade();
+}, false); 
+ 
+video.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+	e.preventDefault();
+	video.play();
+});
+</script>
+
+</body>
+</html>
